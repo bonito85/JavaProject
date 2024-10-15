@@ -5,19 +5,18 @@ public class Paiement {
     private String datePaiement;
     private double montant;
     private boolean esPaye;
-    private Contravention contraventionId;
+    private Contravention contravention;
 
     //Constructeur de la classe Paiement
 
-    public Paiement(String datePaiement, double montant, boolean esPaye, Contravention contraventionId) {
+    public Paiement(String datePaiement, double montant, int contraventionId) {
         this.datePaiement = datePaiement;
         this.montant = montant;
-        this.contraventionId = contraventionId;
+        this.contravention = contravention;
         this.esPaye = esPaye;
     }
 
-    public Paiement(String date, double montantPaiement, int contraventionId) {
-    }
+
 
     //Getters et les setters
     public boolean isEsPaye() {
@@ -44,10 +43,10 @@ public class Paiement {
     }
 
     public Contravention getContraventionId() {
-        return contraventionId;
+        return contravention;
     }
 
     public void setContraventionId(Contravention contraventionId) {
-        this.contraventionId = contraventionId;
+        this.contravention = contraventionId;
     }
 }

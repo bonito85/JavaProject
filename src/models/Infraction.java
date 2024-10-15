@@ -28,4 +28,12 @@ public class Infraction {
     public double getMontantAmende() {
         return montantAmende;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

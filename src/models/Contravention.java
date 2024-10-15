@@ -13,13 +13,13 @@ public class Contravention {
 
 
     //Constructeur de la classe Contrevenant
-    public Contravention(String date, String lieu, AgentDePolice agent, Infraction infraction, Contrevenant contrevenant) {
+   /* public Contravention(String date, String lieu, AgentDePolice agent, Infraction infraction, Contrevenant contrevenant) {
         this.date = date;
         this.lieu = lieu;
         this.agent = agent;
         this.infraction = infraction;
         this.contrevenant = contrevenant ;
-    }
+    }*/
 
     public Contravention(String date, String lieu, int agentId, int infractionId, int contrevenatId) {
         this.date = date;
@@ -28,12 +28,18 @@ public class Contravention {
         this.infractionId = infractionId;
         this.contrevenantId = contrevenatId;
     }
+
     //--------------------------------------------------------------------------------
 
     /*
     * Getters et les setters pour le second constructeur
 
     * */
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public int getAgentId() {
         return agentId;

@@ -61,4 +61,12 @@ public class AgentDePolice implements Personne {
     private boolean isValidName(String name) {
         return name.matches("[a-zA-Z]+");
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
