@@ -4,36 +4,21 @@ public class Contravention {
     private int id;
     private String date;
     private String lieu;
-    private AgentDePolice agent;
-    private Infraction infraction;
-    private Contrevenant contrevenant;
+    private AgentDePolice agentId;
+    private Infraction infractionId;
+    private Contrevenant contrevenantId;
 
 
     //Constructeur de la classe Contrevenant
     public Contravention(String date, String lieu, AgentDePolice agent, Infraction infraction, Contrevenant contrevenant) {
         this.date = date;
         this.lieu = lieu;
-        this.agent = agent;
-        this.infraction = infraction;
-        this.contrevenant = contrevenant;
+        this.agentId = agent;
+        this.infractionId= infractionId;
+        this.contrevenantId = contrevenantId;
     }
 //Getters et Setters
 
-    public AgentDePolice getAgent() {
-        return agent;
-    }
-
-    public void setAgent(AgentDePolice agent) {
-        this.agent = agent;
-    }
-
-    public Infraction getInfraction() {
-        return infraction;
-    }
-
-    public void setInfraction(Infraction infraction) {
-        this.infraction = infraction;
-    }
 
     public String getDate() {
         return date;
@@ -51,17 +36,32 @@ public class Contravention {
         this.lieu = lieu;
     }
 
-    public Contrevenant getContrevenant() {
-        return contrevenant;
-    }
-
-    public void setContrevenant(Contrevenant contrevenant) {
-        this.contrevenant = contrevenant;
-    }
-
     public int getId() {
         return id;
     }
 
 
+    public AgentDePolice getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(AgentDePolice agentId) {
+        this.agentId = agentId;
+    }
+
+    public Infraction getInfractionId() {
+        return infractionId;
+    }
+
+    public void setInfractionId(Infraction infractionId) {
+        this.infractionId = infractionId;
+    }
+
+    public Contrevenant getContrevenantId() {
+        return contrevenantId;
+    }
+
+    public void setContrevenantId(Contrevenant contrevenantId) {
+        this.contrevenantId = contrevenantId;
+    }
 }
