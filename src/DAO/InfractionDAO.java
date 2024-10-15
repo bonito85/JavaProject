@@ -64,6 +64,13 @@ public class InfractionDAO {
 
     // Supprimer une infraction
 
+    public void supprimerInfraction(int id) throws SQLException {
+        String query = "SELECT FROM infractions WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        }
+    }
 
 
 }
