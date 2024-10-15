@@ -60,17 +60,10 @@ Suit le paiement des amendes.
    - Rechercher des contrevenants par nom, numéro de permis ou adresse.
    - Afficher l'historique des contraventions et signaler les récidivistes.
 
-4. **Interface Utilisateur**
-   - Interface graphique pour afficher et gérer les entités.
-   - Options de recherche et de filtrage.
 
-5. **Gestion des Exceptions**
+4. **Gestion des Exceptions**
    - Gérer les erreurs potentielles avec des messages d'information appropriés.
 
-## Technologies Utilisées
-- Java
-- JavaFX (pour l'interface graphique)
-- Collections Java
 
 ## Installation
 1. Clonez le dépôt :
