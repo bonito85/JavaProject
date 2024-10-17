@@ -68,5 +68,5 @@ Suit le paiement des amendes.
 ## Installation
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/votre-utilisateur/gestion-contraventions.git
+   git clone https://github.com/bonito85/gestion-contraventions.git
    cd gestion-contraventions
