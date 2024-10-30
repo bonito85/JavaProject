@@ -17,20 +17,27 @@ public class AgentDePoliceDAO {
     // Ajouter un agent de Police
 
     public void ajouterAgent(AgentDePolice agent) throws SQLException {
-        String query = "INSERT INTO agents (nom, matricule, poste, adresse) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO AgentDePolice (nom, matricule, poste, adresse) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            // Vérifiez chaque champ pour éviter les valeurs nulles
+            String nom = agent.getNom() != null ? agent.getNom() : "Inconnu";
+            String matricule = agent.getMatricule() != null ? agent.getMatricule() : "Inconnu";
+            String poste = agent.getPoste() != null ? agent.getPoste() : "Non spécifié";
+            String adresse = agent.getAdresse() != null ? agent.getAdresse() : "Non spécifiée";
+
             stmt.setString(1, agent.getNom());
             stmt.setString(2, agent.getMatricule());
             stmt.setString(3, agent.getPoste());
             stmt.setString(4, agent.getAdresse());
             stmt.executeUpdate();
+
         }
     }
 
     // Lire les informations les informations des agents par l'ID
 
     public AgentDePolice getAgentById(int id) throws SQLException, InvalidInputException {
-        String query = "SELECT * FROM agents WHERE id = ?";
+        String query = "SELECT * FROM AgentDePolice WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
@@ -46,7 +53,7 @@ public class AgentDePoliceDAO {
 
     public List<AgentDePolice> getAllAgents() throws SQLException, InvalidInputException {
         List<AgentDePolice> agents = new ArrayList<>();
-        String query = "SELECT * FROM agents";
+        String query = "SELECT * FROM AgentDePolice";
         try (Statement stmt = connection.createStatement()) {
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next()) {
@@ -59,7 +66,7 @@ public class AgentDePoliceDAO {
     // Mettre a jour les agents de police
 
     public void mettreAJourAgent(AgentDePolice agent, int id) throws SQLException{
-        String query = "UPDATE agents SET nom = ?, matricule = ?, poste = ?, adresse = ? WHERE id = ?";
+        String query = "UPDATE AgentDePolice SET nom = ?, matricule = ?, poste = ?, adresse = ? WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setString(1, agent.getNom());
             stmt.setString(2, agent.getMatricule());
@@ -72,7 +79,7 @@ public class AgentDePoliceDAO {
     //Supprimer un agent de Police
 
     public void supprimerAgentDePolice(int id) throws SQLException {
-        String query = "DELETE FROM agents WHERE id = ?";
+        String query = "DELETE FROM AgentDePolice WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, id);
             stmt.executeUpdate();

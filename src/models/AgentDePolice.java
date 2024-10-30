@@ -13,7 +13,7 @@ public class AgentDePolice implements Personne {
     //Constructeur de la classe AgentDePolice
 
     public AgentDePolice(String nom, String matricule, String poste, String adresse) throws InvalidInputException{
-        setNom(nom);
+        this.nom = (nom != null) ? nom : "Inconnu";
         this.matricule = matricule;
         this.poste = poste;
         this.adresse = adresse;

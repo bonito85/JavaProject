@@ -17,6 +17,11 @@ public class ContrevenantDAO {
     public void ajouterContrevenant(Contrevenant contrevenant) throws  SQLException {
         String query = "INSERT INTO contrevenants (nom, adresse, numeroPermis) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            //Verification du nom NULL
+            String nom = contrevenant.getNom();
+            if(nom == null) {
+                nom = "Inconnu"; // Valeur par defaut pour le nom
+            }
             stmt.setString(1, contrevenant.getNom());
             stmt.setString(2, contrevenant.getAdresse());
             stmt.setString(3, contrevenant.getNumeroPermis());

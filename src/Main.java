@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Main {
-    public static String URL = "jbdc:mysql://127.0.0.1:3306/gestionnaire_contravention";
+    public static String URL = "jdbc:mysql://127.0.0.1:3306/gestionnaire_contravention";
     public static String USER = "root";
     public static String PASSWORD = "mysql@123";
 
@@ -33,7 +33,7 @@ public class Main {
                   /**
                    * Ajout d'agents de Police
                    * */
-            AgentDePolice agent = new AgentDePolice("Delamoi", "P0025A", "Commissariat Central", "Ouagadougou1");
+            AgentDePolice agent = new AgentDePolice("Delamoi", "P0025B5", "Commissariat Central", "Ouagadougou1");
             agentDePoliceDAO.ajouterAgent(agent);
             //-------------------------------------------
 
@@ -41,7 +41,7 @@ public class Main {
             /**
              * Ajout d'un contrevenant
              * */
-            Contrevenant contrevenant = new Contrevenant("Tynkai", "Ouagadougou1", "P010203");
+            Contrevenant contrevenant = new Contrevenant("Tynkai","Ouagadougou1", "P010203");
             contrevenantDAO.ajouterContrevenant(contrevenant);
             //-------------------------------------------
 

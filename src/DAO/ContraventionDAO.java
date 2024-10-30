@@ -20,6 +20,7 @@ public class ContraventionDAO {
     public void ajouterContravention(Contravention contravention) throws SQLException {
         String query = "SELECT INTO contraventions (date, lieu, agentId, infractionId, contrevenantId) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
+
             stmt.setString(1, contravention.getDate());
             stmt.setString(2, contravention.getLieu());
             stmt.setString(3, String.valueOf(contravention.getAgentId()));
